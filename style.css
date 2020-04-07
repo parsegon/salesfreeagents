@@ -1,0 +1,83 @@
+body {
+  background-color:#FFFBFA;
+  margin:0px;
+  padding:0px;
+  background-image:url('./bg_desktop.png');
+  background-size:cover;
+  text-align: center;
+  background-position:center center;
+}
+
+body > h1{
+  font-family: "Ibarra Real Nova", serif;
+  font-style: normal;
+font-weight: 600;
+font-size: 60px;
+text-align: center;
+
+color: #075582;
+width: 100%;
+text-align: center;
+padding-top: 5vh;
+margin-bottom:0px;
+}
+body > h1 > a{
+  color: #075582;
+  text-decoration: none;
+}
+
+body > p {
+  font-family: "Brother 1816", "brother-1816", brother-1816, helvetica;
+font-style: normal;
+font-weight: 300;
+width: 800px;
+margin-left:calc(50% - 400px);
+font-size: 20px;
+text-align: left;
+
+color: #075582;
+}
+
+body > a > img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 24px;
+}
+
+body > a > img:hover {
+  opacity:.6;
+}
+
+body > .action {
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+body > .action > a {
+  padding: 14px 38px;
+  color:rgba(0,0,0,.6);
+  font-size:18px;
+  background-color:#FABD94;
+  font-family: "Brother 1816", "brother-1816", brother-1816, helvetica;
+  font-weight: 500;
+  box-shadow: 0px 0px 12px #ddd;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+
+}
+
+body > .action + .action > a {
+  background-color:#F58F87;
+}
+
+body > .action > a:hover {
+  transform:scale(1.1);
+  cursor:pointer;
+  opacity:1;
+  -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
