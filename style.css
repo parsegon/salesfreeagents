@@ -230,4 +230,30 @@ body > .action > a:hover {
     width: 90%;
     margin-left: 5%;
   }
+
+  .people > .person{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+
+  .people > .person > .profile{
+    margin-left: calc(50% - 80px);
+    margin-right: calc(50% - 80px);
+  }
+
+  .people > .person > .content {
+    width: 100%;
+  }
+
+  .people > .person > .content > h1{
+    margin-bottom: 18px;
+    width: 80%;
+  }
+
+  .people > .person > .content > .linkedin {
+    position: absolute;
+    top: -180px;
+    right: 24%;
+  }
 }
