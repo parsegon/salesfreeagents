@@ -58,6 +58,9 @@
         <div class="accolade" v-else-if="accolade.type == 'Always Hit Quota'" style="background:#B3B644">
           <p>{{accolade.type}}</p>
         </div>
+        <div class="accolade" v-else-if="accolade.type == 'Quota Hitter'" style="background:#D3B644">
+          <p>{{accolade.type}}</p>
+        </div>
         <div class="accolade" v-else-if="accolade.type == 'Complex Sales Savant'" style="background:#4472B6">
           <p>{{accolade.type}}</p>
         </div>
@@ -118,6 +121,28 @@
               },
               {
                 type: "Salesforce Ninja",
+              },
+            ]
+          },
+          {
+            name: "Ryan Killoran",
+            role: "Director of Growth",
+            layoff: "PowerDetails",
+            email: "rmkilloran@gmail.com",
+            profile: "ryank.jpeg",
+            search: "a Growth role in a Tech Startup",
+            linkedin: "https://www.linkedin.com/in/ryankilloran/",
+            accolades: [
+              {
+                type: "Salesforce Ninja",
+              },
+              {
+                type: "Quota Hitter",
+              },
+              {
+                type: "Custom",
+                color: "#B792D4",
+                text: "5 Years of Sales",
               },
             ]
           },
