@@ -1,0 +1,313 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="A free tool to help salespeople who lost jobs due to layoffs bounce back quickly">
+  <meta name="keywords" content="Sales layoffs, sales recruiting">
+  <meta name="author" content="Battlecard">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Sales Free Agents">
+  <meta property="og:description" content="A free tool to help salespeople who lost jobs due to layoffs bounce back quickly">
+  <meta property="og:image" content="http://salesfreeagents.com/bg.png">
+  <meta property="og:url" content="http://salesfreeagents.com">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <title>Sales Free Agents</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,600,600i,700,700i&display=swap');
+  </style>
+      <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+      <link href="./style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.typekit.net/gvk4beu.css">
+      <link rel="icon" href="./favicon.ico" type="image/ico" sizes="256x256">
+
+</head>
+<body class="noBG">
+  <h1><a href="./">Free Agents</a></h1>
+  <div class="people" id="people">
+    <div class="person" v-for="(person, pindex) in people">
+      <div class="profile" v-if="person.profile" v-bind:style="{'backgroundImage' : 'url(./profiles/' + person.profile + ')'}"></div>
+      <div class="profile" v-else>{{person.name[0]}} {{person.name.split(" ")[1][0]}}</div>
+
+      <div class="content">
+        <h1 v-if="pindex % 4 == 0">Why you should hire {{person.name}} today.</h1>
+        <h1 v-if="pindex % 4 == 1">Why {{person.name}} is your next hire.</h1>
+        <h1 v-if="pindex % 4 == 2">Why talking to {{person.name}} is the move.</h1>
+        <h1 v-if="pindex % 4 == 3">Who is {{person.name}}? Your next teammate.</h1>
+
+        <h2>{{person.role}}</h2>
+        <h3 v-if="person.linkedin">Affected by lay-offs at {{person.layoff}}.</h3>
+        <p>Contact at <u>{{person.email}}</u>.  Looking for {{person.search}}.</p>
+        <div class="linkedin" v-if="person.linkedin"><a target="_blank" v-bind:href="person.linkedin"><img src="./linkedin.png"></a></div>
+      </div>
+      <div class="accolades">
+        <div class="title">Accolades include:</div>
+        <div v-for="(accolade, aindex) in person.accolades">
+
+        <div class="accolade" v-if="accolade.type == 'High Close Rate'" style="background:#37B4A8">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'Salesforce Ninja'" style="background:#5FCCF4">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'Always Hit Quota'" style="background:#B3B644">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'Complex Sales Savant'" style="background:#4472B6">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'Outreach.io Expert'" style="background:#8472B6">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'Intercom Guru'" style="background:#4472F6">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'DiscoverOrg Virtuoso'" style="background:#2212F6">
+          <p>{{accolade.type}}</p>
+        </div>
+        <div class="accolade" v-else-if="accolade.type == 'Bullhorn Boss'" style="background:#DD12F6">
+          <p>{{accolade.type}}</p>
+        </div>
+
+        <div class="accolade" v-else v-bind:style="{'background': accolade.color}">
+          <p>{{accolade.text}}</p>
+        </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#people',
+      data: {
+        people: [
+          {
+            name: "Francesca Gonzalez-Roel",
+            profile: "fran.png",
+            role: "Account Executive, previous experience at Mogul & JustWorks",
+            layoff: "Lucas Group",
+            email: "flg0788@gmail.com",
+            search: "a remote B2B SaaS position",
+            linkedin: "https://www.linkedin.com/mwlite/in/francesca-gr",
+            accolades: [
+              {
+                type: "High Close Rate",
+              },
+              {
+                type: "Custom",
+                color: "#B792D4",
+                text: "5 Years of Sales",
+              },
+              {
+                type: "Custom",
+                color: "#FCD29A",
+                text: "AE of the Year",
+              },
+              {
+                type: "Custom",
+                color: "#F58F87",
+                text: "President’s Club",
+              },
+              {
+                type: "Salesforce Ninja",
+              },
+            ]
+          },
+          {
+            name: "Jennie Lawton",
+            profile: "jennie.jpeg",
+            role: "Head of Sales",
+            layoff: "Skaled Consulting",
+            email: "jennielawton@gmail.com",
+            search: "a VP of Sales/BD for B2B",
+            linkedin: "https://linkedin.com/in/jennielawton",
+            accolades: [
+              {
+                type: "Complex Sales Savant",
+              },
+              {
+                type: "Custom",
+                color: "#AF67B0",
+                text: "15 Years of Sales",
+              },
+              {
+                type: "Custom",
+                color: "#B06793",
+                text: "Tripled ACV in 7mos",
+              },
+              {
+                type: "Always Hit Quota",
+              },
+              {
+                type: "Salesforce Ninja",
+              },
+              {
+                type: "Outreach.io Expert",
+              },
+              {
+                type: "Intercom Guru",
+              },
+            ]
+          },
+          {
+            name: "Gary Wood",
+            profile: "",
+            role: "VAR Partner Manager for Americas",
+            layoff: "MapsPeople",
+            email: "GaryGWood@gmail.com",
+            search: "a Sales Position in Tech",
+            linkedin: "https://www.linkedin.com/in/garygwood/",
+            accolades: [
+              {
+                type: "Custom",
+                color: "#EF67B0",
+                text: "Best Closer on Team",
+              },
+              {
+                type: "Custom",
+                color: "#F02793",
+                text: "$2M+ Pipeline Creator",
+              },
+              {
+                type: "Salesforce Ninja",
+              },
+
+            ]
+          },
+          {
+            name: "Ryan Johns",
+            profile: "ryan.jpeg",
+            role: "Director of Global Alliances",
+            layoff: "Skaled Consulting",
+            email: "rkjohnsconsulting@gmail.com",
+            search: "a VP of Channel, Fractional Sales Leader, or 1099 Work",
+            linkedin: "https://linkedin.com/in/ryan-johns-32a43123/",
+            accolades: [
+              {
+                type: "Outreach.io Expert",
+              },
+              {
+                type: "DiscoverOrg Virtuoso",
+              },
+              {
+                type: "Custom",
+                color: "#EF67E0",
+                text: "40%+ Close Rate",
+              },
+              {
+                type: "Custom",
+                color: "#DF67B0",
+                text: "16 Years of Sales",
+              },
+              {
+                type: "Salesforce Ninja",
+              },
+
+            ]
+          },
+          {
+            name: "Matthew Gootee",
+            role: "Associate Sales Rep/Medical Device",
+            layoff: "Stryker",
+            email: "cole.gootee@yahoo.com",
+            search: "a Medical device/Manufacturing/Industrial Sales position",
+            accolades: [
+              {
+                type: "Custom",
+                color: "#DF3720",
+                text: "10 Years of Sales",
+              },
+              {
+                type: "Salesforce Ninja",
+              },
+
+            ]
+          },
+          {
+            name: "Jared Cummings",
+            role: "Account Executive",
+            layoff: "Lucas Group",
+            email: "jaredcummings@creighton.edu",
+            profile: "jared.jpeg",
+            search: "a Account Management/Sales in IT or staffing position",
+            linkedin: "https://www.linkedin.com/in/jared-cummings/",
+            accolades: [
+              {
+                type: "Bullhorn Boss",
+              },
+
+            ]
+          },
+          {
+            name: "Ann Marie Kramer",
+            role: "Enterprise Business Development Manager",
+            layoff: "SurveyGizmo",
+            email: "amkramer78@gmail.com",
+            profile: "Ann.jpeg",
+            search: "a Account Executive or Manager position",
+            linkedin: "https://www.linkedin.com/in/annkramer78/",
+            accolades: [
+              {
+                type: "Salesforce Ninja",
+              },
+              {
+                type: "Always Hit Quota",
+              },
+              {
+                type: "DiscoverOrg Virtuoso",
+              },
+              {
+                type: "Custom",
+                color: "#DF87B0",
+                text: "125% Quota Hitter",
+              },
+              {
+                type: "Custom",
+                color: "#BFC7B0",
+                text: "14 Years in Sales",
+              },
+
+            ]
+          },
+          {
+            name: "Josh Floring",
+            role: "Commercial Realtor",
+            layoff: "a Real Estate Business",
+            email: "jwfloring@gmail.com",
+            profile: "josh.jpeg",
+            search: "a Sales Role in Tech",
+            linkedin: "https://www.linkedin.com/in/joshfloring/",
+            accolades: [
+            {
+              type: "Custom",
+              color: "#AF67B0",
+              text: "15 Years of Sales",
+            },
+
+            ]
+          },
+          {
+            name: "Akanksha Gulati",
+            role: "Channel Manager",
+            layoff: "NextThink",
+            email: "aakanksha.gulati@nexthink.com",
+            profile: "ak.jpeg",
+            search: "a Channel Manager Role",
+            linkedin: "https://www.linkedin.com/in/akankshagulati/",
+            accolades: [
+            {
+              type: "Custom",
+              color: "#DF3720",
+              text: "10 Years of Sales",
+            },
+            {
+              type: "Salesforce Ninja",
+            },
+
+            ]
+          }
+        ]
+      }
+    })
+  </script>
+</body>

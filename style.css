@@ -10,6 +10,10 @@ body {
   padding-bottom: 30px;
 }
 
+body.noBG {
+  background:none;
+}
+
 body > h1{
   font-family: "Ibarra Real Nova", serif;
   font-style: normal;
@@ -82,6 +86,130 @@ body > .action > a:hover {
     -moz-transition: 1s;
     -o-transition: 1s;
     transition: 1s;
+}
+
+.people {
+  width: 100%;
+  display:inline-block;
+  margin-top: 8vh;
+}
+
+.people > .person{
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  display:inline-block;
+  margin-bottom: 70px;
+  text-align: left;
+}
+
+.people > .person > .profile{
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  background-color: #ddd;
+  float: left;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  text-align: center;
+  padding-top: 33px;
+  box-sizing: border-box;
+  font-size: 57px;
+  font-family: "Brother 1816", "brother-1816", brother-1816, helvetica;
+    font-weight: 100;
+}
+
+.people > .person > .content {
+  width: calc(100% - 160px);
+  padding: 16px 42px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  float:left;
+  display: inline-block;
+  position:relative;
+}
+
+.people > .person > .content > h1{
+  font-size: 32px;
+  font-family: "Ibarra Real Nova", serif;
+  color:#292B68;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.people > .person > .content > h2{
+  font-size: 16px;
+  font-family: "Brother 1816", "brother-1816", brother-1816, helvetica;
+  color:#292B68;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.people > .person > .content > h3{
+
+  font-size: 16px;
+  font-family: "Brother 1816", "brother-1816", brother-1816, helvetica;
+  color:#292B68;
+  font-weight: 400;
+  margin: 0px;
+  opacity:.7;
+  margin-bottom: 16px;
+}
+
+.people > .person > .content > p{
+  font-size: 16px;
+  font-family: "Brother 1816", "brother-1816", brother-1816, helvetica;
+  color:#292B68;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.people > .person > .content > .linkedin{
+  position:absolute;
+  top: 0px;
+  right:0px;
+}
+
+.people > .person > .content > .linkedin > a > img{
+  width: 80px;
+}
+
+.people > .person > .accolades {
+  width: 100%;
+  display:inline-block;
+  font-family: "Ibarra Real Nova", serif;
+  color:#292B68;
+}
+
+.people > .person > .accolades > .title {
+  display: inline-block;
+  float:left;
+  padding: 48px 0px;
+  margin-left: 20px;
+  font-size:18px;
+  text-align: right;
+  width: 140px;
+  margin-right: 28px;
+}
+
+.people > .person > .accolades > div> .accolade{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color:#37B4A8;
+  color:white;
+  text-align: center;
+  float:left;
+  margin: 10px;
+  display: flex;
+  padding: 0px 5px;
+  box-sizing: border-box;
+}
+
+.people > .person > .accolades > div > .accolade > p {
+  margin: auto; /* Important */
+  text-align: center;
 }
 
 @media screen and (max-width: 800px){
