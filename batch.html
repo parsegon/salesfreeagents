@@ -88,10 +88,32 @@
     </div>
   </div>
   <script>
+
+    var shuffle = function (array) {
+
+    	var currentIndex = array.length;
+    	var temporaryValue, randomIndex;
+
+    	// While there remain elements to shuffle...
+    	while (0 !== currentIndex) {
+    		// Pick a remaining element...
+    		randomIndex = Math.floor(Math.random() * currentIndex);
+    		currentIndex -= 1;
+
+    		// And swap it with the current element.
+    		temporaryValue = array[currentIndex];
+    		array[currentIndex] = array[randomIndex];
+    		array[randomIndex] = temporaryValue;
+    	}
+
+    	return array;
+
+    };
+
     var app = new Vue({
       el: '#people',
       data: {
-        people: [
+        people: shuffle([
           {
             name: "Francesca Gonzalez-Roel",
             profile: "fran.png",
@@ -380,6 +402,35 @@
             ]
           },
           {
+            name: "Chris Took",
+            profile: "christ.jpeg",
+            role: "Senior Inside Sales Manager",
+            layoff: "Zudy",
+            email: "christook80@gmail.com",
+            search: "a Sales Management, Senior Sales Executive, Account Management role",
+            linkedin: "https://www.linkedin.com/in/craig-mann/",
+            accolades: [
+
+              {
+                type: "High Close Rate",
+              },
+              {
+                type: "Custom",
+                color: "#AF27D0",
+                text: "17 Years of Sales",
+              },
+              {
+                type: "Custom",
+                color: "#BF67B0",
+                text: "6x Salesperson of Year",
+              },
+              {
+                type: "Salesforce Ninja",
+              },
+
+            ]
+          },
+          {
             name: "David Dupree",
             profile: "david.jpeg",
             role: "Sales Development Representative",
@@ -611,7 +662,7 @@
               },
             ]
           },
-        ]
+        ])
       }
     })
   </script>
